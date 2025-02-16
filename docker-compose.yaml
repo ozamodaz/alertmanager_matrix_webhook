@@ -1,0 +1,14 @@
+services:
+  matrix-alert-webhook:
+    build: .
+    container_name: matrix-alert-webhook
+    ports:
+      - "5001:5001"
+    volumes:
+      - /opt/prometheus/matrix_alert_webhook/message.j2:/templates/message.j2
+    environment:
+      HOMESERVER: ""  # e.g., https://matrix.example.com
+      ACCESS_TOKEN: ""         # Bot's access token
+      ROOM_ID: ""   # Matrix room ID
+      LISTEN_PORT: "5001"
+      TEMPLATE_PATH: "/templates/message.j2"

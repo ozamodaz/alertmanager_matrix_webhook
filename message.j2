@@ -1,0 +1,9 @@
+{% if labels.severity == "critical" %}🔴 {% elif labels.severity == "warning" %}🟡 {% else %}⚪ {% endif %}**{{ summary }}**
+
+{{ description|replace("\n","  \n") }}
+
+<ul style="margin:0; padding-left: 1em;">
+{% for key, value in labels.items() if key not in ["alertname", "severity"] %}
+  <li style="margin:0; padding:0;"><strong>{{ key }}</strong>: {{ value }}</li>
+{% endfor %}
+</ul>

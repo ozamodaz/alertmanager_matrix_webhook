@@ -1,0 +1,13 @@
+global:
+  # You can define global settings here if needed, such as SMTP for email or Slack webhook URLs.
+
+route:
+  # The top-level routing rule.
+  receiver: 'webhook'
+
+  # You can define more routing rules here if you have different alert groups, severities, etc.
+
+receivers:
+  - name: 'webhook'
+    webhook_configs:
+      - url: 'http://127.0.0.1:5001/'
