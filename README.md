@@ -21,6 +21,8 @@ The response will be a JSON object that includes your access_token, user_id, and
 }
 ```
 3. Get Room id:
+   
    Element: Room Settings -> Advanced -> Internal room ID
+   
 5. Fill all Env values to docker-compose.yaml
 3. Run docker-compose and use example prometheus-alertmanager configs
